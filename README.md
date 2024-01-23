@@ -1,4 +1,5 @@
-
+<details>
+  <summary>Voir GO</summary>
 # Reconnaissance et isolation d'individus sur une large banque d'images
 
 L'objectif de ce projet est de mettre en place un système de reconnaissance faciale déployable sur une très grande banque d'images.
@@ -86,3 +87,5 @@ L'endroit où la parallélisation peut avoir le plus gros impact est sur l'analy
 *Evolution de la durée d'analyse en fonction du nombre de workers*
 
 On remarque une nette diminution du temps d'execution lorsque le nombre de workers se rapproche du nombre de coeurs du processeur !
+
+  <summary>Voir ELM</summary>
