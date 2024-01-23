@@ -92,7 +92,6 @@ On remarque une nette diminution du temps d'execution lorsque le nombre de worke
 <details>
   <summary>Voir ELM</summary>
   
-# Guess it!
 
 # Guess It!
 
