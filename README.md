@@ -94,5 +94,23 @@ On remarque une nette diminution du temps d'execution lorsque le nombre de worke
   
 # Guess it!
 
-L'objectif de ce projet est de créer un petit jeu navigateur
+# Guess It!
+
+L'objectif de ce projet est de faire une application web simulant en jeu avec elm. L'objectif du jeu sera de deviner un mot aleatoire a partir de definitions fournies.
+
+##  Pré-requis
+Pour faire tourner le jeu il faut d'abord lancer un serveur, puis modifier le code du Main.elm à la ligne 67 avec l'addresse du serveur.
+ensuite compiler le fichier avec: 
+
+```bash
+  elm make Main.elm --output main.js
+```
+
+## Fonctionalités du jeu
+
+- Devinette de mots : Les joueurs devinent des mots basés sur des définitions chargées depuis une API externe.
+
+- Minuteur : Chaque session de jeu est limitée dans le temps, ajoutant de l'urgence et du défi.
+
+- Système de score : Des points sont perdus à chaque passage de mot.
 </details>
