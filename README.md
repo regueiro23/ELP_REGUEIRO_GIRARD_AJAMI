@@ -1,5 +1,6 @@
 <details>
   <summary>Voir GO</summary>
+  
 # Reconnaissance et isolation d'individus sur une large banque d'images
 
 L'objectif de ce projet est de mettre en place un système de reconnaissance faciale déployable sur une très grande banque d'images.
@@ -90,6 +91,7 @@ On remarque une nette diminution du temps d'execution lorsque le nombre de worke
 </details>
 <details>
   <summary>Voir ELM</summary>
+  
 # Guess it!
 
 L'objectif de ce projet est de créer un petit jeu navigateur
