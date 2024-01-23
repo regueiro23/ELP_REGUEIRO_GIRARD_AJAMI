@@ -87,8 +87,10 @@ L'endroit où la parallélisation peut avoir le plus gros impact est sur l'analy
 *Evolution de la durée d'analyse en fonction du nombre de workers*
 
 On remarque une nette diminution du temps d'execution lorsque le nombre de workers se rapproche du nombre de coeurs du processeur !
-
+</details>
+<details>
   <summary>Voir ELM</summary>
 # Guess it!
 
 L'objectif de ce projet est de créer un petit jeu navigateur
+</details>
