@@ -88,6 +88,7 @@ L'endroit où la parallélisation peut avoir le plus gros impact est sur l'analy
 *Evolution de la durée d'analyse en fonction du nombre de workers*
 
 On remarque une nette diminution du temps d'execution lorsque le nombre de workers se rapproche du nombre de coeurs du processeur !
+
 </details>
 <details>
   <summary>Voir ELM</summary>
@@ -95,21 +96,62 @@ On remarque une nette diminution du temps d'execution lorsque le nombre de worke
 
 # Guess It!
 
-L'objectif de ce projet est de faire une application web simulant en jeu avec elm. L'objectif du jeu sera de deviner un mot aleatoire a partir de definitions fournies.
+## Introduction
+Guess It!" est une application web interactive développée en Elm. Le jeu consiste à deviner un mot aléatoire à partir de ses définitions.
 
-##  Pré-requis
-Pour faire tourner le jeu il faut d'abord lancer un serveur, puis modifier le code du Main.elm à la ligne 67 avec l'addresse du serveur.
-ensuite compiler le fichier avec: 
+## Prérequis
+- Serveur local (localhost)
+- Elm installé sur votre machine
 
-```bash
-  elm make Main.elm --output main.js
+## Configuration
+Suivez ces étapes pour configurer et lancer l'application :
+
+### Étape 1 : Configuration du Serveur
+Modifiez l'URL du serveur dans le fichier `Main.elm`. Remplacez l'adresse existante par celle de votre serveur local, en veillant à inclure le port approprié.
+
+```elm
+-- Dans Main.elm
+, Http.get
+    { url = "http://localhost:3000/static/mots.txt"  -- Remplacez cette ligne avec votre URL
+    , expect = Http.expectString WordsLoaded
 ```
 
-## Fonctionalités du jeu
+Assurez-vous d'inclure le chemin `/static/mots.txt` après votre adresse.
 
-- Devinette de mots : Les joueurs devinent des mots basés sur des définitions chargées depuis une API externe.
+### Étape 2 : Compilation Elm
+Compilez le fichier `Main.elm` avec la commande suivante :
 
-- Minuteur : Chaque session de jeu est limitée dans le temps, ajoutant de l'urgence et du défi.
+```bash
+elm make Main.elm --output main.js
+```
 
-- Système de score : Des points sont perdus à chaque passage de mot.
-</details>
+Exécutez cette commande dans le répertoire approprié pour éviter les erreurs de chemin.
+
+### Étape 3 : Lancement du Serveur
+Si vous n'êtes pas familier avec le lancement d'un serveur Elm, suivez ces instructions :
+
+  1. Téléchargez et installez Node.js depuis [https://nodejs.org/en/download](https://nodejs.org/en/download).
+  2. Ouvrez un terminal dans le répertoire `ELP_REGUEIRO_GIRARD_AJAMI\ELM`.
+  3. Exécutez l'une des commandes suivantes :
+
+```bash
+npx serve .
+```
+
+ou 
+
+```bash
+npx http-server .
+```
+
+**Note :** Il est important de lancer le serveur dans le même dossier que le fichier `index.html`.
+
+### Étape 4 : Jouer au Jeu
+Après avoir configuré le serveur, accédez à l'adresse de votre serveur local pour commencer à jouer.
+
+## Fonctionnalités du Jeu
+"Guess It!" offre une expérience de jeu dynamique avec les caractéristiques suivantes :
+
+- **Devinettes de Mots :** Les joueurs tentent de deviner des mots à partir de définitions fournies.
+- **Interface Utilisateur Intuitive :** Une interface claire et facile à naviguer.
+- **Système de Score et Gestion du Temps :** Le jeu intègre un système de score et un chronomètre pour augmenter le défi.
