@@ -132,7 +132,7 @@ elm make Main.elm --output main.js
 Exécutez cette commande dans le répertoire approprié pour éviter les erreurs de chemin.
 
 ### Étape 3 : Lancement du Serveur
-Si vous n'êtes pas familier avec le lancement d'un serveur Elm, sachez qu'il exite deux options :
+Si vous n'êtes pas familier avec le lancement d'un serveur local, sachez qu'il exite plusieurs options, en voici deux :
 
 #### Avec Elm reactor :
    Elm propose un outil de développement intéractif qui nous permet d'observer le résultat de notre code de façon instantanée.
