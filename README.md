@@ -139,7 +139,7 @@ elm reactor
 
 **Note :** Il est important de lancer le serveur dans le même dossier que le fichier `index.html`.
 
-### Étape 4 : Jouer au Jeu
+### Étape 4 : À vous de jouer
 Après avoir configuré le serveur, accédez à l'adresse de votre serveur local pour commencer à jouer.
 
 ## Fonctionnalités du Jeu
