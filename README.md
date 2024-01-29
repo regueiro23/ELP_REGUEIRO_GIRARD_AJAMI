@@ -135,10 +135,8 @@ Exécutez cette commande dans le répertoire approprié pour éviter les erreurs
 Si vous n'êtes pas familier avec le lancement d'un serveur Elm, sachez qu'il exite deux options :
 
 #### Avec Elm reactor :
-
    Elm propose un outil de développement intéractif qui nous permet d'observer le résultat de notre code de façon instantanée.
    Pour cela, ouvrez un terminal dans le répertoire `ELP_REGUEIRO_GIRARD_AJAMI\ELM` et exécutez la commande suivante :
-
 ```bash
 elm reactor
 ```
@@ -146,6 +144,23 @@ elm reactor
 Cette commande lance un serveur accessible à travers le lient suivant : http://localhost:8000 . Vous pourrez désormais accéder à votre projet depuis votre moteur de recherhe et lancer index.html
 
 **Note :** Il est important de lancer le serveur dans le même dossier que le fichier `index.html` et dans le dossier racine du projet.
+
+#### Avec un serveur web basique :
+Vous pouvez aussi monter un serveur web basique depuis un deuxième terminal. 
+La commande :
+```bash
+http-server DOSSIER_ELM -a localhost -p 8000 --cors
+```
+démarre un serveur HTTP local sur le port 8000 de votre machine. Il s'agit d'un serveur assez puissant pour tester des fonctions en local, généralement utilisé pour servir des fichiers statiques tels que des pages HTML.
+Vous devrez changer DOSSIER_ELM par le chemin vers le dossier que vous souhaitez servir avec le serveur HTTP.
+`-a` spécifie à quelle adresse le serveur écoutera les requêtes entrantes. Laisser à localhost pour qu'il écoute uniquement les connexions depuis la machine locale sur laquelle il s'exécute
+`-p` spécifie le port sur lequel le serveur écoutera les requêtes HTTP entrantes
+`--cors` active le support CORS (Cross-Origin Resource Sharing), qui permet au serveur de répondre aux requêtes provenant d'origines différentes de celle où il est hébergé
+
+Vous devrez penser à installer le paquet `http-server` avant de lancer le serveur. Ceci peut être fait à travers le gestionaire de paquets `npm` grâce à la commande pour une installation globale sur le système:
+```bash
+npm install --global http-server
+```
 
 ### Étape 4 : À vous de jouer
 Après avoir configuré le serveur, accédez à l'adresse de votre serveur local pour commencer à jouer.
