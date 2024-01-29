@@ -152,10 +152,15 @@ La commande :
 http-server DOSSIER_ELM -a localhost -p 8000 --cors
 ```
 démarre un serveur HTTP local sur le port 8000 de votre machine. Il s'agit d'un serveur assez puissant pour tester des fonctions en local, généralement utilisé pour servir des fichiers statiques tels que des pages HTML.
+
 Vous devrez changer DOSSIER_ELM par le chemin vers le dossier que vous souhaitez servir avec le serveur HTTP.
+
 `-a` spécifie à quelle adresse le serveur écoutera les requêtes entrantes. Laisser à localhost pour qu'il écoute uniquement les connexions depuis la machine locale sur laquelle il s'exécute
+
 `-p` spécifie le port sur lequel le serveur écoutera les requêtes HTTP entrantes
+
 `--cors` active le support CORS (Cross-Origin Resource Sharing), qui permet au serveur de répondre aux requêtes provenant d'origines différentes de celle où il est hébergé
+
 
 Vous devrez penser à installer le paquet `http-server` avant de lancer le serveur. Ceci peut être fait à travers le gestionaire de paquets `npm` grâce à la commande pour une installation globale sur le système:
 ```bash
