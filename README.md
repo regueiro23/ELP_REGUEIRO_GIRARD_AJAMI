@@ -162,11 +162,11 @@ Vous devrez changer DOSSIER_ELM par le chemin vers le dossier que vous souhaitez
 `--cors` active le support CORS (Cross-Origin Resource Sharing), qui permet au serveur de répondre aux requêtes provenant d'origines différentes de celle où il est hébergé
 
 
-Vous devrez penser à installer le paquet `http-server` avant de lancer le serveur. Ceci peut être fait à travers le gestionaire de paquets `npm` grâce à la commande pour une installation globale sur le système:
+Vous devrez penser à installer le paquet `http-server` avant de lancer le serveur. Ceci peut être fait à travers le gestionaire de paquets `npm` grâce à la commande pour une installation globale sur le système :
 ```bash
 npm install --global http-server
 ```
-
+Vous pourrez désormais accéder à votre serveur en suivant le lien http://localhost:8000 (pour le port 8000).
 ### Étape 4 : À vous de jouer
 Après avoir configuré le serveur, accédez à l'adresse de votre serveur local pour commencer à jouer.
 
