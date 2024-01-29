@@ -132,16 +132,20 @@ elm make Main.elm --output main.js
 Exécutez cette commande dans le répertoire approprié pour éviter les erreurs de chemin.
 
 ### Étape 3 : Lancement du Serveur
-Si vous n'êtes pas familier avec le lancement d'un serveur Elm, suivez ces instructions :
+Si vous n'êtes pas familier avec le lancement d'un serveur Elm, sachez qu'il exite deux options :
 
-   Ouvrez un terminal dans le répertoire `ELP_REGUEIRO_GIRARD_AJAMI\ELM`.
-   Exécutez la commande suivante :
+####Avec Elm reactor :
+
+   Elm propose un outil de développement intéractif qui nous permet d'observer le résultat de notre code de façon instantanée.
+   Pour cela, ouvrez un terminal dans le répertoire `ELP_REGUEIRO_GIRARD_AJAMI\ELM` et exécutez la commande suivante :
 
 ```bash
 elm reactor
 ```
 
-**Note :** Il est important de lancer le serveur dans le même dossier que le fichier `index.html`.
+Cette commande lance un serveur accessible à travers le lient suivant : http://localhost:8000 . Vous pourrez désormais accéder à votre projet depuis votre moteur de recherhe et lancer index.html
+
+**Note :** Il est important de lancer le serveur dans le même dossier que le fichier `index.html` et dans le dossier racine du projet.
 
 ### Étape 4 : À vous de jouer
 Après avoir configuré le serveur, accédez à l'adresse de votre serveur local pour commencer à jouer.
