@@ -148,6 +148,7 @@ Après avoir configuré le serveur, accédez à l'adresse de votre serveur local
 - **Devinettes de Mots :** Les joueurs tentent de deviner des mots à partir de définitions fournies.
 - **Interface Utilisateur Intuitive :** Une interface claire et facile à naviguer.
 - **Système de Score et Gestion du Temps :** Le jeu intègre un système de score et un chronomètre pour augmenter le défi.
+- **Possibilité d'avoir accès aux réponses :** Une liste de Mots devinés permet de connaître en tout moment les mots rentrés, devinés ou pas.
 </details>
 <details>
   <summary>Voir JS</summary>
