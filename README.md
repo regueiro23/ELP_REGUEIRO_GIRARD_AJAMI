@@ -107,7 +107,7 @@ Guess It!" est une application web interactive développée en Elm. Le jeu consi
 Suivez ces étapes pour configurer et lancer l'application :
 
 ### Étape 1 : Configuration du Serveur
-Modifiez l'URL du serveur dans le fichier `Main.elm`. Remplacez l'adresse existante par celle de votre serveur local, en veillant à inclure le port approprié (probablement ligne 67 du code).
+Modifiez l'URL du serveur dans le fichier `Main.elm`. Remplacez l'adresse existante par celle de votre serveur local, en veillant à inclure le port approprié.
 
 ```elm
 -- Dans Main.elm
