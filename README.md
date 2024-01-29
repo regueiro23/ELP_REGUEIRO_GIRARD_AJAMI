@@ -134,7 +134,7 @@ Exécutez cette commande dans le répertoire approprié pour éviter les erreurs
 ### Étape 3 : Lancement du Serveur
 Si vous n'êtes pas familier avec le lancement d'un serveur Elm, sachez qu'il exite deux options :
 
-- **Avec Elm reactor :**
+#### Avec Elm reactor :
 
    Elm propose un outil de développement intéractif qui nous permet d'observer le résultat de notre code de façon instantanée.
    Pour cela, ouvrez un terminal dans le répertoire `ELP_REGUEIRO_GIRARD_AJAMI\ELM` et exécutez la commande suivante :
