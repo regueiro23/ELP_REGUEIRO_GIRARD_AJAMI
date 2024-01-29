@@ -99,6 +99,10 @@ On remarque une nette diminution du temps d'execution lorsque le nombre de worke
 ## Introduction
 Guess It!" est une application web interactive développée en Elm. Le jeu consiste à deviner un mot aléatoire à partir de ses définitions.
 
+<div style="text-align: center;">
+    <img width="100%" src="https://i.ibb.co/PFGn1Tm/Capture-vid-o-du-29-01-2024-21-49-20-online-video-cutter-com.gif">
+</div>
+
 ## Prérequis
 - Serveur local (localhost)
 - Elm installé sur votre machine
