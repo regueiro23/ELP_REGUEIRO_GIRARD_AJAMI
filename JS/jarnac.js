@@ -1,4 +1,4 @@
-
+import * as sac.js
 function creerJeu(){
     let sac = [];
     function addLetter(letter, n){
@@ -54,5 +54,19 @@ function melanger(sac){
     }
     return sac; 
 }
+let jeu = creerJeu()
 
+
+/*
+creerJeu(commencerjeu)
+
+// ou ca 
 creerJeu()
+.then(commencerjeu)
+.catch(erreurCreationJeu)
+
+//utiliser ca  ^
+async creerJeu(){}
+
+await creerJeu()
+commencerJeu()*/
