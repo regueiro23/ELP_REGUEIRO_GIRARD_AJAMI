@@ -20,5 +20,12 @@ Tous les joueurs commencent avec trois indices. Si un joueur est bloqué et qu'i
 
 Afin de mettre en valeur le projet, nous avons travaillé une animation à l'ouverture. Cette animation nous a beaucoup appris sur le fonctionnement des promesses, des callbacks et de la gestion asynchrone en JavaScript. Cette fonction encapsule une animation ASCII dans une promesse, illustrant comment JavaScript permet de structurer des opérations asynchrones de manière claire et efficace. 
 
-Blablabla
+Expliquer le découpage en modules :
+main.js fichier principal puis :
+    - utils.js
+    - jarnac.js
+    - animation.js
+    - next_turn.js
+    - check_word.js
+    - cartes.js
 
