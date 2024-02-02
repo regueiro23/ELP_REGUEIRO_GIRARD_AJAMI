@@ -1,7 +1,7 @@
 module.exports = {nextTurn, displayStatus, finPartie, changePlayer}
 
 const { demandeJarnac } = require('./jarnac.js');
-const { questionAsync, estVide, completerListe, retirerLettres, MotExiste, afficheMatrice,chercheIndice } = require('./utils.js');
+const { questionAsync, estVide, completerListe, retirerLettres, MotExiste, afficheMatrice,chercheIndice, retirerTroisValeursAleatoires} = require('./utils.js');
 const { canFormWord, canModifyWord } = require('./check_word.js');
 const { tirerCarte } = require('./cartes.js');
 const fs = require('fs').promises;
@@ -14,37 +14,69 @@ const fs = require('fs').promises;
 async function nextTurn(players, currentPlayerIndex,pioche) {
 
     const currentPlayer = players[currentPlayerIndex];
-    const lineNumber = await questionAsync(`${currentPlayer.name}, choisissez une ligne pour écrire ou modifier (entrez 'indice' pour obtenir un indice ou 'passer' pour passer votre tour) : `);
-    
+
+    const choixJeu = await questionAsync(`${currentPlayer.name}, que voulez vous faire ? Tapez 'jouer', 'indice', 'echanger' ou 'passer' : `);
+
     //Si le joueur demande un indice, on vérifie qu'il lui reste des indices et qu'il ait 4 lettres ou moins en main
-    if (lineNumber.toLowerCase()==="indice"){
+    if (choixJeu.toLowerCase()==="indice"){
         if (currentPlayer.letters.length<5){
             if (currentPlayer.indices!=0){
                 currentPlayer.indices-=1;
-                console.log("Recherche de mot à partir de vos lettres:")
-                await chercheIndice(currentPlayer.letters)
-                nextTurn(players, currentPlayerIndex,pioche);
-                return;
+                console.log("Recherche de mot à partir de vos lettres:");
+                await chercheIndice(currentPlayer.letters);
             }
             else{
-                console.log("Vous n'avez plus d'indices !")
-                nextTurn(players, currentPlayerIndex,pioche);
-                return;
+                console.log("Vous n'avez plus d'indices !");
             }
         }
         else{
-            console.log("Vous avez trop de lettres, cherchez encore un peu ;)")
-            nextTurn(players, currentPlayerIndex,pioche);
-            return;
+            console.log("Vous avez trop de lettres, cherchez encore un peu ;)");
         }
+        nextTurn(players, currentPlayerIndex,pioche);
+        return;
+    }
 
+    //Si le joueur demande à échanger des cartes
+    if (choixJeu.toLowerCase()==="echanger"){
+        if (!(currentPlayer.letters.length<3)){
+            if (currentPlayer.echanges!=0){
+
+                currentPlayer.echanges-=1;
+
+                currentPlayer.letters=retirerTroisValeursAleatoires(currentPlayer.letters)
+                lettresAjoutees=tirerCarte(3,pioche)
+                for (let i=0; i<3; i++){
+                    currentPlayer.letters.push(lettresAjoutees[i]);
+                }
+                displayStatus(players);
+            }
+            else{
+                console.log("Vous n'avez plus le droit d'échanger de cartes, vous avez épuisé tous vos jetons");
+            }
+        }
+        else{
+            console.log("Vous avez moins de trois lettres donc vous ne pouvez pas échanger...");
+        }
+        nextTurn(players, currentPlayerIndex,pioche);
+        return;
     }
 
     //Si le joueur passe son tour, on propose à son adversaire de faire un coup de Jarnac
-    if (lineNumber.toLowerCase() === 'passer') {
+    if (choixJeu.toLowerCase() === 'passer') {
         demandeJarnac(players, currentPlayerIndex,pioche);
         return;
     }
+
+    //Si le choix du joueur est inconnu
+    if (choixJeu.toLowerCase() !== 'jouer') {
+        console.log("Choix non reconnu, recommencez...")
+        nextTurn(players, currentPlayerIndex,pioche);
+        return;
+    }
+
+
+    const lineNumber = await questionAsync(`${currentPlayer.name}, choisissez une ligne pour écrire ou modifier : `);
+    
 
     const parsedNumber = parseInt(lineNumber, 10);
     if (!Number.isInteger(parsedNumber) || isNaN(parsedNumber)) {
@@ -147,6 +179,7 @@ function displayStatus(players) {
 
         console.log(`Lettres de ${player.name}: ${player.letters}`);
         console.log(`Nombre d'indices restants : ${player.indices}`);
+        console.log(`Nombre d'échanges restants : ${player.echanges}`);
         console.log(`Pool de ${player.name}:`);
         afficheMatrice(player.pool)
         console.log("\n");
@@ -157,6 +190,9 @@ function displayStatus(players) {
 //changePlayer : Appelée lorsque le tour passe d'un joueur à un autre
 function changePlayer(players, currentPlayerIndex,pioche) {
     currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
+
+    //Les joueurs gagnent une lettre au début de chaque tour
+    players[currentPlayerIndex].letters.push(tirerCarte(1,pioche)[0] );
     displayStatus(players);
     nextTurn(players, currentPlayerIndex,pioche);
 }

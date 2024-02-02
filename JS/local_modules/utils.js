@@ -1,4 +1,4 @@
-module.exports = {questionAsync, estVide, retirerLettres, completerListe, detectionFin, trouverLigneVide, MotExiste,afficheMatrice, chercheIndice}
+module.exports = {questionAsync, estVide, retirerLettres, completerListe, detectionFin, trouverLigneVide, MotExiste,afficheMatrice, chercheIndice, retirerTroisValeursAleatoires}
 const axios = require('axios'); // Module axios utilisé pour les requêtes HTTP à l'API
 const readline = require('readline');
 const rl = readline.createInterface({
@@ -131,4 +131,23 @@ function afficheMatrice(matrice) {
         });
         console.log(ANSI_GRID_COLOR + ligneAffichage + ANSI_RESET);
     });
+}
+
+//retirerTroisValeursAleatoires : Retourne une liste dont trois éléments aléatoires ont été supprimés
+//                                Appelée lorsque le joueur demande à échanger des lettres
+function retirerTroisValeursAleatoires(liste) {
+    let indicesARetirer = [];
+    while (indicesARetirer.length < 3) {
+        let indice = Math.floor(Math.random() * liste.length);
+        if (!indicesARetirer.includes(indice)) {
+            indicesARetirer.push(indice);
+        }
+    }
+    indicesARetirer.sort((a, b) => b - a);
+
+    for (let indice of indicesARetirer) {
+        liste.splice(indice, 1);
+    }
+
+    return liste;
 }

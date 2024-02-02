@@ -14,8 +14,10 @@ class Jarnac {
         this.pioche=[]
         creerPioche(this.pioche)
         this.players = [
-            { pool: Array(8).fill(null).map(() => Array(9).fill(' ')), letters: tirerCarte(6,this.pioche), indices:3 },
-            { pool: Array(8).fill(null).map(() => Array(9).fill(' ')), letters: tirerCarte(6,this.pioche), indices:3 }
+            { pool: Array(8).fill(null).map(() => Array(9).fill(' ')), letters: tirerCarte(6,this.pioche), indices:3, echanges:3 },
+
+            //Le deuxième joueur ne tire que 5 lettres puisqu'il en tirera une au début de son tour
+            { pool: Array(8).fill(null).map(() => Array(9).fill(' ')), letters: tirerCarte(5,this.pioche), indices:3, echanges:3 }
         ];
         this.currentPlayerIndex = 0;
 
