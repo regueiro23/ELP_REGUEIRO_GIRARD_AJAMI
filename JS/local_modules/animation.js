@@ -1,5 +1,5 @@
 module.exports = { demarrage }
-const { questionAsync } = require('utils.js');
+const { questionAsync } = require('./utils.js');
 
 ///////////////////////////////////////////////////
 // animation.js : Contient l'animation de départ //

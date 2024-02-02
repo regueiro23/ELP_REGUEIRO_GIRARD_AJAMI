@@ -8,3 +8,5 @@ Coup de Jarnac !! Martin vole les lettres de Jean pour écrire "TEST"!!
 Jean a écrit dans la ligne 1: "BAR"
 Martin a écrit dans la ligne 1: "KAI"
 Jean a écrit dans la ligne 1: "NEER"
+Wissam a écrit dans la ligne 1: "RUIN"
+Hyppo a écrit dans la ligne 1: "POV"

@@ -1,9 +1,9 @@
 module.exports = { demandeJarnac, coupdeJarnac }
 
-const { questionAsync, detectionFin, estVide, completerListe, trouverLigneVide, retirerLettres, MotExiste } = require('utils.js')
-const { finPartie, changePlayer, nextTurn, displayStatus } = require('next_turn.js')
-const { canFormWord, canModifyWord } = require('check_word.js')
-const { tirerCarte } = require('cartes.js')
+const { questionAsync, detectionFin, estVide, completerListe, trouverLigneVide, retirerLettres, MotExiste } = require('./utils.js')
+const { finPartie, changePlayer, nextTurn, displayStatus } = require('./next_turn.js')
+const { canFormWord, canModifyWord } = require('./check_word.js')
+const { tirerCarte } = require('./cartes.js')
 const fs = require('fs').promises;
 
 ////////////////////////////////////////////////////////////////

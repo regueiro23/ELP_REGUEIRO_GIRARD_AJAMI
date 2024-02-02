@@ -1,7 +1,7 @@
-const { nextTurn,displayStatus } = require('./node_modules/next_turn.js');
-const { creerPioche, tirerCarte } = require('./node_modules/cartes.js');
-const { questionAsync } = require('./node_modules/utils.js');
-const { demarrage } = require('./node_modules/animation.js')
+const { nextTurn,displayStatus } = require('./local_modules/next_turn.js');
+const { creerPioche, tirerCarte } = require('./local_modules/cartes.js');
+const { questionAsync } = require('./local_modules/utils.js');
+const { demarrage } = require('./local_modules/animation.js')
 
 ////////////////////////////////////////////////////
 // main.js : Fichier principal. Démarre la partie //

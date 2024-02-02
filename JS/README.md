@@ -4,17 +4,35 @@
     <img width="100%" src="https://i.ibb.co/Qp4dq11/A-convertir-online-video-cutter-com.gif">
 </div>
 
+## Prérequis
+- Un terminal
+- Node pour utiliser JS
+Nous allons supposer que vous disposez du premier. Si vous disposez pas du deuxieme, lancez la commande suivante dans votre terminal:
+```bash
+sudo apt update
+sudo apt-get install npm
+```
+### Lancement 
+Il suffit de taper la commande suivante et vous serez pret a jouer.
+```bash
+node main.js
+```
+Nous vous recommendons de mettre le terminal en plein ecran pour mieux visualiser le jeu.
+## Fonctionement
+### Interface d'utilisateurs:
+Les joueurs peuvent interagir avec le jeu via le terminal. Celui-ci montrera les deux tableaux du jeu,
+Les lettres disponibles pour chaque joueur ainsi que le nombre d'indices restants.
 
-A noter dans le Readme :
+Le systeme dynamique de logs permet de guider les joueurs en affichant les choix possibles du jeu et les options choisies. Apres le tour du jouer, l'écran s'actualise pour optimiser l'affichage.
 
-Parler du systeme de logs:
 <div style="text-align: center;">
     <img width="100%" src="https://image.noelshack.com/fichiers/2024/05/5/1706838481-capture-d-ecran-du-2024-02-02-02-46-11.png">
 </div>
 
-Afin de vérifier les mots insérés par les joueurs, nous utilisons une API externe ( la même que ELM ). A chaque fois qu'un joueur tente de rentrer un mot, une requête est envoyée pour vérifier si le mot existe ou non. Attention : l'API est anglaise donc les mots entrés doivent être anglais
+### Verification des mots
+Afin de vérifier les mots insérés par les joueurs, nous utilisons une API externe. A chaque fois qu'un joueur tente de rentrer un mot, une requête est envoyée pour vérifier si le mot existe ou non. Attention : l'API est anglaise donc le jeu est en anglais.
 
-Pour faire les requetes à l'API : Utilisation du module axios. Pré-installé avec le projet mais si il disparrait, réinstaller avec npm install axio ( attention ça fait disparaitre les modules qu'on a créés il faut les remettre à la main )
+Pour faire les requetes à l'API : Nous utilisons le module axios. Il est pré-installé avec le projet mais s'il disparrait, réinstaller avec npm install axio.
 
 Tous les joueurs commencent avec trois indices. Si un joueur est bloqué et qu'il a peu de lettres, il peut demander un indice. On recherche alors parmis toutes les combinaisons de ses lettres s'il est possible de former un mot avec.
 
@@ -28,4 +46,3 @@ main.js fichier principal puis :
     - next_turn.js
     - check_word.js
     - cartes.js
-
