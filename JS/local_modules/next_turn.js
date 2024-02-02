@@ -77,7 +77,7 @@ async function nextTurn(players, currentPlayerIndex,pioche) {
 
     const lineNumber = await questionAsync(`${currentPlayer.name}, choisissez une ligne pour écrire ou modifier : `);
     
-
+    // Vérification des entrées de type appropriés
     const parsedNumber = parseInt(lineNumber, 10);
     if (!Number.isInteger(parsedNumber) || isNaN(parsedNumber)) {
         console.log("Veuillez entrer un numéro de ligne valide.");
@@ -91,7 +91,7 @@ async function nextTurn(players, currentPlayerIndex,pioche) {
         return;
     }
 
-
+    // Verification des tailles des mots
     let word = await questionAsync(`Entrez votre mot : `);
     word = word.toUpperCase().split('');
     if (word.length>9){
@@ -104,7 +104,8 @@ async function nextTurn(players, currentPlayerIndex,pioche) {
         nextTurn(players, currentPlayerIndex,pioche);
         return;
     }
-
+    
+    // Verification de l'exitance du mot avec l'API (fonciton motExiste())
     const existingWord = currentPlayer.pool[lineIndex];
     let actionText = "";
 
