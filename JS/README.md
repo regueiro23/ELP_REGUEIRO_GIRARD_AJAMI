@@ -20,28 +20,38 @@ node main.js
 ```
 Nous vous recommandons de mettre le terminal en plein écran pour mieux visualiser le jeu.
 
-## Fonctionement
-### Interface d'utilisateurs:
+## Fonctionalités
 
-Les joueurs peuvent interagir avec le jeu via le terminal. Celui-ci montrera les deux tableaux du jeu,
-Les lettres disponibles pour chaque joueur ainsi que le nombre d'indices restants.
+### Animation stylé
 
-Le système dynamique de logs permet de guider les joueurs en affichant les choix possibles du jeu et les options choisies. Après le tour du joueur, l'écran s'actualise pour optimiser l'affichage.
+Afin de mettre en valeur le projet, nous avons travaillé une animation à l'ouverture. Cette animation nous a beaucoup appris sur le fonctionnement des promesses, des callbacks et de la gestion asynchrone en JavaScript. Cette fonction encapsule une animation ASCII dans une promesse, illustrant comment JavaScript permet de structurer des opérations asynchrones de manière claire et efficace. 
+
+### Interface d'utilisateurs
+
+Les joueurs interagissent avec le jeu directement depuis le terminal. Grâce à une interface dynamique, les joueurs sont guidés tout au long de la partie par des indications claires sur les actions possibles et les choix effectués. Elle affiche aussi les plateaux de jeu pour chaque participant, leurs lettres disponibles, ainsi que le nombre d'indices restants. À chaque fin de tour, l'écran se rafraîchit pour offrir une expérience visuelle optimisée.
+
+### Système de logs
+
+Un systeme de logs est aussi utilisé afin de permetre a tout momment aux joueurs de consulter l'historique des modifications des tableaux et des mots.
+Cet historique sera accessible depuis un fichier appellé `jarnac_coups.txt` au dossier de lancement du jeu.
 
 <div style="text-align: center;">
     <img width="100%" src="https://image.noelshack.com/fichiers/2024/05/5/1706838481-capture-d-ecran-du-2024-02-02-02-46-11.png">
 </div>
 
 ### Verification des mots
-Afin de vérifier les mots insérés par les joueurs, nous utilisons une API externe. A chaque fois qu'un joueur tente de rentrer un mot, une requête est envoyée pour vérifier si le mot existe ou non. Attention : l'API est anglaise donc le jeu est en anglais.
+Afin de vérifier les mots insérés par les joueurs, nous utilisons une API externe. A chaque fois qu'un joueur tente de rentrer un mot, une requête est envoyée pour vérifier si le mot existe ou non. Attention : l'API est anglaise donc le jeu dpit se jouer en anglais.
 
-Pour faire les requetes à l'API : Nous utilisons le module axios. Il est pré-installé avec le projet mais s'il disparrait, réinstaller avec npm install axio.
+Pour faire les requetes à l'API : Nous utilisons le module axios. Il est pré-installé avec le projet mais s'il disparrait, réinstaller avec:
 
-Tous les joueurs commencent avec trois indices. Si un joueur est bloqué et qu'il a peu de lettres, il peut demander un indice. On recherche alors parmis toutes les combinaisons de ses lettres s'il est possible de former un mot avec.
+```bash
+npm install axios
+```
+Tous les joueurs commencent avec trois indices. Si un joueur est bloqué et qu'il a peu de lettres, il peut demander un indice. On recherche alors parmi toutes les combinaisons de ses lettres s'il est possible de former un mot avec.
 
-Afin de mettre en valeur le projet, nous avons travaillé une animation à l'ouverture. Cette animation nous a beaucoup appris sur le fonctionnement des promesses, des callbacks et de la gestion asynchrone en JavaScript. Cette fonction encapsule une animation ASCII dans une promesse, illustrant comment JavaScript permet de structurer des opérations asynchrones de manière claire et efficace. 
 
-### Structure du code
+
+## Structure du code
 
 Afin d'eviter un seul fichier de 500+ lignes de code, nous avons decidé de decouper le jeu de la facon suivante:
 
@@ -65,3 +75,11 @@ Apporte des fonction pour verifier si la modification d'un plateau est permise o
 
 #### cartes.js
 Ce petit module sert a creer le sac des lettres et a en piocher quand neccessaire.
+
+
+
+# TODO
+
+
+FAUTES DE FRANçAIS 
+
